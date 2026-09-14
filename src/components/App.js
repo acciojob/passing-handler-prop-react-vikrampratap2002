@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div id="master">
-      <h5 className="heading">{/* display title here */}</h5>
+      <h3 className="heading">{title}</h3>
 
       <div className="row">
         {colourConfig.map((config, index) => (
