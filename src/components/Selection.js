@@ -10,7 +10,9 @@ const Selection = (props) => {
       className="fix-box"
       style={selectionStyle}
       onClick={() => applyColor(updateSelectionStyle)}
-    />
+    >
+      <h2 className="subheading">Selection</h2>
+    </div>
   );
 };
 

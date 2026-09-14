@@ -31,7 +31,7 @@ const App = () => {
 
   return (
     <div id="master">
-      <h3 className="heading">{title}</h3>
+      <h5 className="heading">{title}</h5>
 
       <div className="row">
         {colourConfig.map((config, index) => (
@@ -49,6 +49,5 @@ const App = () => {
     </div >
   )
 }
-
 
 export default App;
