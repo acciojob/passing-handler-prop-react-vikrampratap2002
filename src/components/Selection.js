@@ -1,19 +1,41 @@
-import React, { useState } from 'react';
-import '../styles/Child.css';
+import React, { useState, useEffect } from 'react';
 
-const Selection = (props) => {
-  const { applyColor } = props;
-  const [selectionStyle, updateSelectionStyle] = useState({ background: "" });
-
+function Selection({ selectedColor }) {
+  const [boxStyle, setBoxStyle] = useState({});
+  
+  // Update box style when selectedColor changes
+  useEffect(() => {
+    if (selectedColor) {
+      setBoxStyle({ backgroundColor: selectedColor });
+    }
+  }, [selectedColor]);
+  
+  // Handle click on box to apply selected color
+  const handleBoxClick = () => {
+    if (selectedColor) {
+      setBoxStyle({ backgroundColor: selectedColor });
+    }
+  };
+  
   return (
-    <div
-      className="fix-box"
-      style={selectionStyle}
-      onClick={() => applyColor(updateSelectionStyle)}
-    >
-      <h2 className="subheading">Selection</h2>
+    <div className="selection-container">
+      <div 
+        className="fix-box" 
+        style={boxStyle}
+        onClick={handleBoxClick}
+      ></div>
+      <div 
+        className="fix-box" 
+        style={boxStyle}
+        onClick={handleBoxClick}
+      ></div>
+      <div 
+        className="fix-box" 
+        style={boxStyle}
+        onClick={handleBoxClick}
+      ></div>
     </div>
   );
-};
+}
 
 export default Selection;
